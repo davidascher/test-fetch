@@ -3,7 +3,6 @@ import './App.css';
 
 class App extends Component {
   componentDidMount() {
-    let self = this;
     fetch('https://api.github.com/')
       .then(resp => resp.json())
       .then((data) => {
