@@ -17,12 +17,14 @@ class App extends Component {
     if (this.state && this.state.title) {
       let title = this.state.title
       return (
-        <div>current user url: <strong>{title}</strong></div>
+        <div className="App">
+          <div>Fetch call HAS returned: <strong>{title}</strong></div>
+        </div>
       )
     } else {
       return (
         <div className="App">
-          <h2>Welcome to React</h2>
+          <h2>Fetch call has not returned</h2>
         </div>
       );
     }
