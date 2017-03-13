@@ -13,5 +13,6 @@ it('has one h2', () => {
 
 it('displays the github URL', () => {
   let wrap = shallow(<App/>)
+  expect(wrap.find("strong").length).toEqual(1)
   expect(wrap.find("strong").text()).toEqual("https://api.github.com/user")
 });
