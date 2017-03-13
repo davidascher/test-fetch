@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-  componentWillMount() {
+  componentDidMount() {
     let self = this;
     fetch('https://api.github.com/')
       .then(resp => resp.json())
-      .then(function(data) {
-        return self.setState({'title': data.current_user_url})
+      .then((data) => {
+        this.setState({'current_user_url': data.current_user_url})
       }
     ).catch(function(err) {
       console.log("ERROR fetching", err)
     })
   }
   render() {
-    if (this.state && this.state.title) {
-      let title = this.state.title
+    if (this.state && this.state.current_user_url) {
+      let title = this.state.current_user_url
       return (
         <div className="App">
           <div>Fetch call HAS returned: <strong>{title}</strong></div>
